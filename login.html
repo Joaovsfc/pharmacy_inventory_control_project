@@ -18,22 +18,24 @@
         <header>
             <nav class="navbar sticky-top">
                 <div class="container-fluid d-flex align-items-center justify-content-start">
-                    <i class="bi bi-person-circle iconPerfil"></i>
-                    <span class="ps-2 align-middle">Hello, <strong>Joao!</strong></span>
                 </div>
             </nav>
         </header>
 
         <section class="container mt-3">
-            <div id="alertReceitas" class="alert alert-success" role="alert">
-                Nenhuma receita criada
-            </div>
-
-            <div id="response"></div>
-
-            <div class="form-floating mb-3 mt-3 sticky-bottom">
-                <a href="./criarReceita.html" class="w-100 btn btn-success text-center">Nova receita</a>
-            </div>
+            <form id="formLogin" class="row" > 
+                <div class="col-12" >
+                    <label for="email" class="form-label" >E-mail</label>
+                    <input id="email" type="text" class="form-control" id="email" required placeholder="exemplo@email.com">
+                </div>
+                <div class="col-12 mt-1">
+                    <label for="descricao" class="form-label">Senha</label>
+                    <input id="senha" type="password" class="form-control" id="senha" required placeholder="***">
+                </div>
+                <div class="col-12 mb-3">
+                    <button type="submit" class="w-100 btn btn-success mt-3">Login</button>
+                </div>
+            </form>
         </section>
 
         <footer class="p-3">
@@ -43,16 +45,4 @@
     </body>
 </html>
 
-<script type="module" src="./js/index.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-    crossorigin="anonymous"></script>
-<script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-<script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-    crossorigin="anonymous"></script>
+<script type="module" src="./js/login.js"></script>
