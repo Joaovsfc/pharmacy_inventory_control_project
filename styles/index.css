@@ -1,0 +1,24 @@
+.iconPerfil {
+    font-size: 22px;
+}
+
+body {
+    background-color: #EEEEEE;
+}
+body header {
+    background-color: #42855B;
+}
+header span {
+    color: #fff;
+}
+header i {
+    color: #EEEEEE;
+}
+footer {
+    background-color: #3D8361;
+    color: #CFD2CF;
+}
+
+.semLink {
+    text-decoration: none;
+}
