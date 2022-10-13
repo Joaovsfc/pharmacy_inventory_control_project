@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+            integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./styles/index.css" />
+        <title>Home</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar sticky-top">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle iconPerfil"></i>
+                        <span class="ps-2 align-middle">Hello, <strong id="nomeUser"></strong></span>
+                    </div>
+                    <i id="estoque" class="bi bi-box2-fill"></i>
+                </div>
+            </nav>
+        </header>
+
+        <section class="container mt-3">
+            <div id="alertReceitas" class="alert text-center alert-warning" role="alert">
+                Nenhuma receita criada
+            </div>
+
+            <h4 class="text-center">Procure clientes</h4>
+            <div class="input-group col-12 mb-3">
+                <input id="inputPesquisar" class="form-control" type="text">
+                <span id="buttonPesquisar" class="input-group-text"><i class="bi bi-search"></i></span>
+            </div>
+
+            <div id="response"></div>
+
+            <div class="form-floating mb-3 mt-3 sticky-bottom">
+                <a href="./criarReceita.html" class="w-100 btn btn-success text-center">Nova receita</a>
+            </div>
+        </section>
+
+        <footer class="p-3">
+            <p class="text-center">Inc 2022</p>
+            <span class="text-center d-block">Centro Universitário Integrado</span>
+        </footer>
+    </body>
+</html>
+
+<script type="module" src="./js/index.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>

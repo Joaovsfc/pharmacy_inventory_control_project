@@ -11,48 +11,44 @@
             integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./styles/index.css" />
-        <title>Home</title>
+        <title>Login</title>
     </head>
 
     <body>
         <header>
             <nav class="navbar sticky-top">
-                <div class="container-fluid d-flex align-items-center justify-content-start">
-                    <i class="bi bi-person-circle iconPerfil"></i>
-                    <span class="ps-2 align-middle">Hello, <strong>Joao!</strong></span>
+                <div class="container-fluid d-flex align-items-center justify-content-center">
+                    <h4 style="color: #fff;">Entrar na área restrita</h4>
                 </div>
             </nav>
         </header>
 
         <section class="container mt-3">
-            <div id="alertReceitas" class="alert alert-success" role="alert">
-                Nenhuma receita criada
-            </div>
+            <form id="formLogin" class="row" > 
+                <div class="col-12" >
+                    <label for="email" class="form-label" >E-mail</label>
+                    <input id="email" type="email" class="form-control" id="email" required placeholder="exemplo@email.com">
+                </div>
+                <div class="col-12 mt-1">
+                    <label for="descricao" class="form-label">Senha</label>
+                    <input id="senha" type="password" class="form-control" id="senha" required placeholder="***">
+                </div>
 
-            <div id="response"></div>
+                <div id="alertError" class="d-none col-12 alert alert-danger mt-3 text-center">
+                    Credenciais incorretas!
+                </div>
 
-            <div class="form-floating mb-3 mt-3 sticky-bottom">
-                <a href="./criarReceita.html" class="w-100 btn btn-success text-center">Nova receita</a>
-            </div>
+                <div class="col-12 mt-3">
+                    <button type="submit" class="w-100 btn btn-success">Entrar</button>
+                </div>
+            </form>
         </section>
 
-        <footer class="p-3">
+        <footer class="p-3 fixed-bottom">
             <p class="text-center">Inc 2022</p>
             <span class="text-center d-block">Centro Universitário Integrado</span>
         </footer>
     </body>
 </html>
 
-<script type="module" src="./js/index.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-    crossorigin="anonymous"></script>
-<script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-<script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-    crossorigin="anonymous"></script>
+<script type="module" src="./js/login.js"></script>

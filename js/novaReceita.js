@@ -13,19 +13,22 @@ form.addEventListener('submit', (e) => {
     if (bodyTable.children.length > 0) {
         const arrayProdutos = [];
         for (let index = 0; index < bodyTable.children.length; index++) {
-            const data = {
-                quantidade: bodyTable.children[index].children[2].textContent,
-                nome: bodyTable.children[index].children[1].textContent
+            if (bodyTable.children[index].children[2]) {
+                const data = {
+                    quantidade: bodyTable.children[index].children[2].textContent,
+                    nome: bodyTable.children[index].children[1].textContent
+                }
+                arrayProdutos.push(data);
             }
-            arrayProdutos.push(data);
-            bodyTable.children[index].innerHTML = "";
         }
+        bodyTable.innerHTML = "";
 
         const dados = {
             nome: campoNomeCliente.value,
             descricao: campoDescricaoCliente.value,
             produtos: arrayProdutos,
-            data: campoData
+            data: campoData,
+            entregue: false
         };
         inserir(dados);
         campoDescricaoCliente.value = "";

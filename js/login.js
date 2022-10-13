@@ -1,24 +1,30 @@
-import { login } from "../lib/banco.js";
+import { inserirUser } from "../lib/banco.js";
+const userVerify = [
+    {
+        nome: "Marciano",
+        email: "teste@email.com",
+        senha: "123"
+    },
+    {
+        nome: "Janislei",
+        email: "teste@gmail.com",
+        senha: "1234"
+    }
+];
 
 const form = document.getElementById('formLogin');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
 
-    const campoNome = document.getElementById('email').value;
+    const campoEmail = document.getElementById('email').value;
     const campoSenha = document.getElementById('senha').value;
-    const obj = {
-        email: campoNome,
-        senha: campoSenha
-    };
-
-    const valido = login(obj);
-    if (login(obj)){
-        window.location.href = "../index.html";
-    }else{
-        window.alert('Usuario não cadastrado no sistema!')
-    }
-
     
-    
+    userVerify.map((user) => {
+        if (user.email === campoEmail && user.senha === campoSenha) {
+            inserirUser(user);
+            window.location.href = "../home.html";
+        }
+    });
+    const alertError = document.getElementById("alertError");
+    alertError.classList.remove("d-none");
 });
