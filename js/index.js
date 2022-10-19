@@ -13,9 +13,60 @@ estoque.addEventListener('click', () => {
 const result = pegarDados();
 
 if (result) {
+    var contadorDiv = 0;
     result.map((resultado) => {
         if (resultado.entregue === false) {
-            //Alerta sem nenhuma receita
+            contadorDiv++;
+
+            //Criando Modal para abrir a receita
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.id = "modal-" + contadorDiv;
+
+            //Modal dialog
+            const modalDialog = document.createElement('div');
+            modalDialog.classList.add('modal-dialog');
+
+            //Modal content
+            const modalContent = document.createElement('div');
+            modalContent.classList.add('modal-content');
+
+            //Modal header
+            const modalHeader = document.createElement('div');
+            modalHeader.classList.add('modal-header');
+
+            //h1 header;
+            const h1ModalHeader = document.createElement('h1');
+            const textoH1Header = document.createTextNode(resultado.nome);
+            h1ModalHeader.appendChild(textoH1Header);
+            modalHeader.appendChild(h1ModalHeader);
+
+            //BodyModal
+            const modalBody = document.createElement('div');
+            modalBody.classList.add('modal-body');
+            
+            //montando descricao para cada produto;
+            resultado.produtos.map(produto => {
+                const pBodyModal = document.createElement('p');
+                pBodyModal.innerText = produto.quantidade + "x - " + produto.nome;
+                modalBody.appendChild(pBodyModal);
+            })
+
+            //divider body modal
+            const dividerBody = document.createElement('hr');
+            modalBody.appendChild(dividerBody);
+
+            //descricao da receita modal
+            const pDescricaoModal = document.createElement('p');
+            pDescricaoModal.innerText = resultado.descricao;
+            modalBody.appendChild(pDescricaoModal);
+
+            modalContent.appendChild(modalHeader);
+            modalContent.appendChild(modalBody);
+            modalDialog.appendChild(modalContent);
+            modal.appendChild(modalDialog);
+
+            //Tirando alerta sem nenhuma receita 
             const alertReceitas = document.getElementById('alertReceitas');
             alertReceitas.classList.add('d-none');
     
@@ -27,6 +78,8 @@ if (result) {
             elementDivCard.classList.add('card');
             elementDivCard.classList.add('text-center');
             elementDivCard.classList.add('mt-2');
+            elementDivCard.dataset.bsToggle = "modal";
+            elementDivCard.dataset.bsTarget = "#modal-" + contadorDiv;
         
             //body do card
             const elementDivCardBody = document.createElement('div');
@@ -85,6 +138,7 @@ if (result) {
             elementDivCard.appendChild(elementDivCardBody);
             elementDivCard.appendChild(elementDivCardFooter);
     
+            response.appendChild(modal);
             response.appendChild(elementDivCard);
         }
     })
